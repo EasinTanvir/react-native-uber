@@ -10,7 +10,13 @@ import "../global.css";
 
 SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
+const RootLayoutWrapper = () => {
+  return <RootLayout />;
+};
+
+export default RootLayoutWrapper;
+
+const RootLayout = () => {
   const [loaded, error] = useFonts({
     "Jakarta-Bold": require("../assets/fonts/PlusJakartaSans-Bold.ttf"),
     "Jakarta-ExtraBold": require("../assets/fonts/PlusJakartaSans-ExtraBold.ttf"),
@@ -33,11 +39,17 @@ export default function RootLayout() {
     return null;
   }
 
+  const isAuthenticated = false; // Replace with your authentication logic
   return (
     <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="(root)" options={{ headerShown: false }} />
-      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+      <Stack.Protected guard={isAuthenticated}>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="(root)" options={{ headerShown: false }} />
+      </Stack.Protected>
+
+      <Stack.Protected guard={!isAuthenticated}>
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+      </Stack.Protected>
     </Stack>
   );
-}
+};

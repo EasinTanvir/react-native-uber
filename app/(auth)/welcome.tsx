@@ -1,11 +1,12 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Welcome = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Text>Welcome</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
