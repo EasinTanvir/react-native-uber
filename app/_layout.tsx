@@ -1,3 +1,7 @@
+import {
+  RobotoMono_400Regular,
+  RobotoMono_500Medium_Italic,
+} from "@expo-google-fonts/roboto-mono";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
@@ -15,6 +19,8 @@ export default function RootLayout() {
     "Jakarta-Medium": require("../assets/fonts/PlusJakartaSans-Medium.ttf"),
     "Jakarta-Regular": require("../assets/fonts/PlusJakartaSans-Regular.ttf"),
     "Jakarta-SemiBold": require("../assets/fonts/PlusJakartaSans-SemiBold.ttf"),
+    RobotoMono_400Regular,
+    RobotoMono_500Medium_Italic,
   });
 
   useEffect(() => {
