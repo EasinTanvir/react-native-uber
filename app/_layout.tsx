@@ -39,7 +39,7 @@ const RootLayout = () => {
     return null;
   }
 
-  const isAuthenticated = false; // Replace with your authentication logic
+  const isAuthenticated = true; // Replace with your authentication logic
   return (
     <Stack>
       <Stack.Protected guard={isAuthenticated}>
