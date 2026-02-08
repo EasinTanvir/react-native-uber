@@ -1,14 +1,14 @@
+import { images } from "@/constants";
+
 import { Link } from "expo-router";
-import { View } from "react-native";
+import { ImageBackground } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+    <ImageBackground
+      resizeMode="cover"
+      source={images.signUpCar}
+      className="flex-1  flex justify-center items-center"
     >
       <Link
         href="/(root)/(tabs)/home"
@@ -16,6 +16,6 @@ export default function Index() {
       >
         Go to Tab Screen
       </Link>
-    </View>
+    </ImageBackground>
   );
 }
