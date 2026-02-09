@@ -1,6 +1,7 @@
+import OfflineNotice from "@/components/OfflineNotice";
 import NetInfo from "@react-native-community/netinfo";
 import React, { useEffect } from "react";
-import { Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Profile = () => {
   useEffect(() => {
@@ -13,9 +14,9 @@ const Profile = () => {
     return () => unsubscribe();
   }, []);
   return (
-    <View>
-      <Text>Profile</Text>
-    </View>
+    <SafeAreaView className=" ">
+      <OfflineNotice />
+    </SafeAreaView>
   );
 };
 
